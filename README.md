@@ -64,6 +64,19 @@ To see a fully-working real application, visit the [Cutcon][Cutcon] project.
 6. Make sure to add `--add-opens=java.base/java.nio=ALL-UNNAMED` JVM option to start your app.  
    See [`compose.desktop.application{}` block in build.gradle.kts][build.gradle.kts on GitHub]
 
+When using a Compose media player library such as [ComposeMultiplatformMediaPlayer](https://github.com/Chaintech-Network/ComposeMultiplatformMediaPlayer),
+that relies on external VLC program (i.e. requires VLC to have been installed on the system),
+you can instruct that media player library to use the app bundled VLC by calling the below `setupVLC()` function in your `main` fun:
+
+```kotlin
+// See https://github.com/mahozad/vlc-setup/issues/1
+fun setupVLC() {
+    System
+        .getProperty("compose.application.resources.dir")
+        ?.let { System.setProperty("jna.library.path", it) }
+}
+```
+
 If this repository gets enough attention, another library can be created to make steps 4 and 5 easier.
 
 [cmp]: https://github.com/jetbrains/compose-multiplatform
