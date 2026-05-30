@@ -58,7 +58,7 @@ class FunctionalTest {
         plugins {
             id("org.jetbrains.kotlin.jvm") version "${BuildConfig.KOTLIN_VERSION}"
             id("org.jetbrains.kotlin.plugin.compose") version "${BuildConfig.KOTLIN_VERSION}"
-            id("org.jetbrains.compose") version "${BuildConfig.COMPOSE_VERSION}"
+            id("org.jetbrains.compose") version "${BuildConfig.CMP_VERSION}"
             id("ir.mahozad.vlc-setup")
         }
         compose.desktop {

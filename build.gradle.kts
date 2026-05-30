@@ -13,8 +13,8 @@ dependencies {
     implementation(libs.download.gradlePlugin)
     testImplementation(libs.kotlin.gradlePlugin)
     testImplementation(libs.compose.gradlePlugin)
-    testImplementation(libs.junit5)
-    testRuntimeOnly(libs.junit5.platformLauncher)
+    testImplementation(libs.junit)
+    testRuntimeOnly(libs.junit.platformLauncher)
     testImplementation(libs.assertj)
     testImplementation(libs.systemStubs.core)
     testImplementation(libs.systemStubs.jupiter)
@@ -22,7 +22,7 @@ dependencies {
 
 buildConfig {
     buildConfigField("KOTLIN_VERSION", libs.versions.kotlin.gradlePlugin.get())
-    buildConfigField("COMPOSE_VERSION", libs.versions.compose.gradlePlugin.get())
+    buildConfigField("CMP_VERSION", libs.versions.compose.gradlePlugin.get())
 }
 
 tasks.withType<Test> {

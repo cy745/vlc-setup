@@ -1,5 +1,6 @@
 import com.vanniktech.maven.publish.JavaLibrary
 import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.SourcesJar
 
 plugins {
     id("java-library")
@@ -49,15 +50,15 @@ mavenPublishing {
     configure(
         platform = JavaLibrary(
             javadocJar = JavadocJar.None(),
-            sourcesJar = false,
+            sourcesJar = SourcesJar.Empty()
         )
     )
     publishToMavenCentral(automaticRelease = false)
     signAllPublications()
     coordinates(
-        version = project.version.toString(),
         groupId = project.group.toString(),
         artifactId = project.name,
+        version = project.version.toString()
     )
 
     pom {
