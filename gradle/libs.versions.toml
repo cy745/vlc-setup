@@ -2,7 +2,7 @@
 kotlin-gradlePlugin = "2.3.21"
 compose-gradlePlugin = "1.8.2"
 download-gradlePlugin = "5.6.0"
-java = "24"
+java = "25"
 gradle = "9.5.1"
 junit5 = "5.13.4"
 assertj = "3.27.3"
