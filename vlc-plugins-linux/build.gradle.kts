@@ -26,6 +26,8 @@ tasks {
         networkTimeout = 60_000 // milliseconds
         distributionType = Wrapper.DistributionType.ALL
         validateDistributionUrl = false
+        retries = 3
+        retryBackOffMs = 30_000 // Ddoubles on each failure
     }
 }
 
@@ -33,7 +35,7 @@ publishing {
     repositories {
         maven {
             name = "CustomLocal"
-            url = uri("file://${layout.buildDirectory.get()}/local-repository")
+            url = layout.buildDirectory.dir("local-repository").get().asFile.toURI()
         }
         maven {
             name = "GitHubPackages"

@@ -34,6 +34,8 @@ tasks.wrapper {
     networkTimeout = 60_000 // milliseconds
     distributionType = DistributionType.ALL
     validateDistributionUrl = false
+    retries = 3
+    retryBackOffMs = 30_000 // Ddoubles on each failure
 }
 
 gradlePlugin {
