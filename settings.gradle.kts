@@ -1,6 +1,7 @@
 rootProject.name = "vlc-setup"
 
-includeBuild("vlc-plugins-linux")
+// JitPack CI doesn't have JDK 25, skip linux plugin subproject
+// includeBuild("vlc-plugins-linux")
 
 pluginManagement {
     repositories {

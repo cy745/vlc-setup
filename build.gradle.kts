@@ -2,8 +2,10 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType
 
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    `java-gradle-plugin`
     alias(libs.plugins.buildConfig)
     alias(libs.plugins.gradlePublish)
+    `maven-publish`
 }
 
 group = "ir.mahozad"
